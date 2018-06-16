@@ -1,0 +1,68 @@
+// @media screen and (min-width: $sm-break) {
+// 	.tablet {
+// 		display: none;
+// 	}
+// }
+
+.nav-left,
+.nav-right {
+	display: flex;
+	z-index: 2;
+
+	& i,
+	& p {
+		margin: 0% 10%;
+	}
+}
+
+.nav-menu {
+	text-transform: uppercase;
+}
+
+.nav-right{
+	justify-content: center;
+}
+
+.ceremony-images,
+.blog-images,
+.gear-images {
+	display: flex;
+	
+	.ceremony-player-image {
+		background-image: url(../../assets/img/redwings-player.jpg);
+		width: 30%;
+		height: 300px;		//135px in pdf
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	.blog-history-image {
+		background-image: url(../../assets/img/redwings-old.jpg);
+		width: 60%;
+		height: 300px;		//135px in pdf
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	.gear-fans-image {
+		background-image: url(../../assets/img/redwings-fans.jpg);
+		width: 60%;
+		height: 300px;		//135px in pdf
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+}
+
+.connect-image-container {
+
+	@media screen and (min-width: $med-break) {
+		display: flex;
+		margin: 2%;
+	}
+}
+
+
+

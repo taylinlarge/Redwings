@@ -1,0 +1,50 @@
+.hamburger-nav {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	visibility: hidden;
+	overflow: hidden;
+	background-color: $red;
+	width: 100vw;
+	height: 0;
+	z-index: 10;
+	transition: all 0.3s linear;
+
+
+	@media screen and (min-width: $lg-break) {
+		display: none;
+	}
+
+
+	&.active {
+		visibility: visible;
+		height: 100vh;
+	}
+
+	.hamburger-nav-list {
+		width: 100%;
+	    height: 90%;
+	    display: flex;
+	    flex-direction: column;
+	    justify-content: space-around;
+	    align-items: center;
+
+	    .hamburger-items {
+	    	position: relative;
+	    	opacity: 0;
+	    	font-style: italic;
+	    	//border-bottom-width: 0px;
+    		border-bottom: 3px solid transparent;
+
+	    	&:hover {
+	    		border-bottom: 3px solid $black;
+	    	}
+
+	    	& a {
+	    		color: $white;
+	    		text-decoration: none;
+	    	}
+	    }
+	}
+}

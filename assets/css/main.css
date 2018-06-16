@@ -1,0 +1,1053 @@
+/* 
+==============================================
+CONTENT:	Project Name Here
+AUTHOR:		Your Name Here
+==============================================
+
+TABLE OF CONTENTS:
+
+1. Main Layout
+2. Content
+
+==============================================
+*/
+.hero-news {
+  position: relative; }
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0; }
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+.video-info {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  padding: 5%;
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%; }
+  .video-info h2 {
+    border-bottom: 1px solid #fff;
+    padding-bottom: 2%; }
+  .video-info p {
+    padding-top: 2%; }
+  .video-info .video-info-text {
+    margin-right: 5%;
+    max-width: 500px; }
+  .video-info .video-info-time {
+    margin-top: 15px; }
+    .video-info .video-info-time .video-date {
+      margin-left: 15px; }
+
+.sort {
+  margin: 5%; }
+  @media screen and (min-width: 768px) {
+    .sort {
+      display: flex;
+      justify-content: space-between; } }
+  .sort .sort-by,
+  .sort .filter {
+    display: flex;
+    border: 1px solid #fff;
+    margin-bottom: 5%; }
+    @media screen and (min-width: 768px) {
+      .sort .sort-by,
+      .sort .filter {
+        width: 45%; } }
+    .sort .sort-by h2,
+    .sort .filter h2 {
+      background: #fff;
+      color: #CB161E;
+      padding: 2% 10%;
+      text-transform: uppercase;
+      text-align: center;
+      flex-grow: 1; }
+    .sort .sort-by div,
+    .sort .filter div {
+      width: 100%;
+      background: #DB4544;
+      padding-right: 5%;
+      flex-grow: 2; }
+
+.news-article-parent {
+  margin: 5%; }
+
+.news-article {
+  margin-bottom: 3%;
+  position: relative;
+  left: -500px;
+  opacity: 0;
+  transition: .5s all; }
+  .news-article.active {
+    left: 0;
+    opacity: 1; }
+
+.news-alert {
+  display: flex;
+  height: 200px;
+  position: relative;
+  overflow: hidden; }
+  .news-alert .news-alert-video {
+    background-image: url(../../assets/img/redwings-blog.jpg);
+    width: 40%;
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; }
+    @media screen and (min-width: 768px) {
+      .news-alert .news-alert-video {
+        width: 25%; } }
+  .news-alert .news-blog-1 {
+    background-image: url(../../assets/img/redwings-blog3.jpg); }
+  .news-alert .news-blog-2 {
+    background-image: url(../../assets/img/redwings-blog4.jpg); }
+  .news-alert .news-blog-3 {
+    background-image: url(../../assets/img/redwings-blog5.jpg); }
+  .news-alert .news-alert-text {
+    position: relative;
+    padding: 2.5%;
+    width: 60%;
+    background: #fff;
+    color: #000000;
+    display: flex;
+    flex-direction: column; }
+    @media screen and (min-width: 768px) {
+      .news-alert .news-alert-text {
+        width: 75%;
+        flex-direction: row-reverse; } }
+    .news-alert .news-alert-text p {
+      font-size: 1rem; }
+      @media screen and (min-width: 768px) {
+        .news-alert .news-alert-text p {
+          padding-top: 4%; } }
+    .news-alert .news-alert-text .news-alert-text-date {
+      border-bottom: 1px solid #000000;
+      padding-bottom: 25px;
+      width: 50%; }
+      @media screen and (min-width: 768px) {
+        .news-alert .news-alert-text .news-alert-text-date {
+          border-bottom: none;
+          padding: 0; } }
+    .news-alert .news-alert-text .news-alert-text-time {
+      padding: 0;
+      width: 50%; }
+    .news-alert .news-alert-text h2 {
+      padding: 2% 0%;
+      line-height: 24px;
+      font-weight: bold; }
+      @media screen and (min-width: 768px) {
+        .news-alert .news-alert-text h2 {
+          border-bottom: 1px solid #000000;
+          padding-bottom: 4%; } }
+
+.news-alert-details {
+  display: flex;
+  justify-content: space-between; }
+  @media screen and (min-width: 768px) {
+    .news-alert-details {
+      width: 30%;
+      padding-top: 45px; } }
+
+.news-alert-paragraph {
+  margin-top: 25px; }
+  @media screen and (min-width: 768px) {
+    .news-alert-paragraph {
+      width: 70%;
+      margin-right: 5%;
+      margin-top: 0; } }
+
+.more-button {
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+  width: 95%;
+  text-align: right;
+  margin: 0;
+  padding: 30px 0;
+  background-image: linear-gradient(to bottom, transparent, #fff);
+  color: #CB161E;
+  text-transform: uppercase;
+  font-weight: bold; }
+  @media screen and (min-width: 768px) {
+    .more-button {
+      background-image: none; } }
+
+.time-zone {
+  font-style: italic; }
+
+.nav-left,
+.nav-right {
+  display: flex;
+  z-index: 2; }
+  .nav-left i,
+  .nav-left p,
+  .nav-right i,
+  .nav-right p {
+    margin: 0% 10%; }
+
+.nav-menu {
+  text-transform: uppercase; }
+
+.nav-right {
+  justify-content: center; }
+
+.ceremony-images,
+.blog-images,
+.gear-images {
+  display: flex; }
+  .ceremony-images .ceremony-player-image,
+  .blog-images .ceremony-player-image,
+  .gear-images .ceremony-player-image {
+    background-image: url(../../assets/img/redwings-player.jpg);
+    width: 30%;
+    height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; }
+  .ceremony-images .blog-history-image,
+  .blog-images .blog-history-image,
+  .gear-images .blog-history-image {
+    background-image: url(../../assets/img/redwings-old.jpg);
+    width: 60%;
+    height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; }
+  .ceremony-images .gear-fans-image,
+  .blog-images .gear-fans-image,
+  .gear-images .gear-fans-image {
+    background-image: url(../../assets/img/redwings-fans.jpg);
+    width: 60%;
+    height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; }
+
+@media screen and (min-width: 768px) {
+  .connect-image-container {
+    display: flex;
+    margin: 2%; } }
+
+@font-face {
+  font-family: 'TrebuchetMS';
+  src: url("../../assets/font/TrebuchetMS.ttf") format("truetype"); }
+
+.hamburger-nav {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  overflow: hidden;
+  background-color: #CB161E;
+  width: 100vw;
+  height: 0;
+  z-index: 10;
+  transition: all 0.3s linear; }
+  @media screen and (min-width: 1024px) {
+    .hamburger-nav {
+      display: none; } }
+  .hamburger-nav.active {
+    visibility: visible;
+    height: 100vh; }
+  .hamburger-nav .hamburger-nav-list {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center; }
+    .hamburger-nav .hamburger-nav-list .hamburger-items {
+      position: relative;
+      opacity: 0;
+      font-style: italic;
+      border-bottom: 3px solid transparent; }
+      .hamburger-nav .hamburger-nav-list .hamburger-items:hover {
+        border-bottom: 3px solid #000000; }
+      .hamburger-nav .hamburger-nav-list .hamburger-items a {
+        color: #fff;
+        text-decoration: none; }
+
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent; }
+
+.slick-list {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0; }
+
+.slick-list:focus {
+  outline: none; }
+
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand; }
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+.slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.slick-track:before,
+.slick-track:after {
+  display: table;
+  content: ''; }
+
+.slick-track:after {
+  clear: both; }
+
+.slick-loading .slick-track {
+  visibility: hidden; }
+
+.slick-slide {
+  display: none;
+  float: left;
+  height: 100%;
+  min-height: 1px; }
+
+[dir='rtl'] .slick-slide {
+  float: right; }
+
+.slick-slide img {
+  display: block; }
+
+.slick-slide.slick-loading img {
+  display: none; }
+
+.slick-slide.dragging img {
+  pointer-events: none; }
+
+.slick-initialized .slick-slide {
+  display: block; }
+
+.slick-loading .slick-slide {
+  visibility: hidden; }
+
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent; }
+
+.slick-arrow.slick-hidden {
+  display: none; }
+
+/* 1. Main Layout ================================= */
+* {
+  box-sizing: border-box; }
+
+body {
+  background: #000000;
+  color: #fff;
+  display: box;
+  font-family: 'TrebuchetMS'; }
+  body.news {
+    background: url(../../assets/img/red-surface.jpg); }
+    body.news .subheading-news {
+      top: 13px;
+      z-index: 5;
+      margin-top: 5%; }
+      @media screen and (min-width: 768px) {
+        body.news .subheading-news {
+          margin-top: 2%; } }
+  body.roster {
+    background-image: url(../../assets/img/hero-image.png);
+    width: 100%;
+    background-size: cover;
+    background-position: 40% 30%;
+    background-color: #CB161E;
+    background-blend-mode: multiply; }
+
+#tablet {
+  display: none; }
+  @media screen and (min-width: 768px) {
+    #tablet {
+      display: inline-block; } }
+  @media screen and (min-width: 1024px) {
+    #tablet.nav-menu {
+      display: none; } }
+
+#desktop {
+  display: none; }
+  @media screen and (min-width: 1024px) {
+    #desktop {
+      display: inline-block; } }
+
+.wrapper {
+  margin: 0 auto; }
+
+.desktop-nav {
+  width: 100%;
+  height: 36px;
+  background: #000000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0% 5%; }
+  @media screen and (min-width: 768px) {
+    .desktop-nav {
+      padding: 0% 2%; } }
+
+.hockey-hamburger {
+  background-image: url(../../assets/img/burg.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 45px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; }
+  @media screen and (min-width: 768px) {
+    .hockey-hamburger {
+      width: 80px; } }
+  @media screen and (min-width: 1024px) {
+    .hockey-hamburger {
+      display: none; } }
+
+.burger-bars {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  left: -10px; }
+  @media screen and (min-width: 1024px) {
+    .burger-bars {
+      display: none; } }
+  .burger-bars .top-burg, .burger-bars .mid-burg, .burger-bars .bot-burg {
+    position: relative;
+    width: 30px;
+    height: 2px;
+    background-color: white;
+    border-radius: 2px; }
+  .burger-bars .mid-burg {
+    margin: 3px 0px;
+    width: 25px; }
+  .burger-bars .bot-burg {
+    width: 20px; }
+
+.hockey-logo {
+  background-image: url(../../assets/img/nhl-logo2.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 45px;
+  height: 20px; }
+
+.bag {
+  background-image: url(../../assets/img/bag.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 45px;
+  height: 20px; }
+
+.user {
+  background-image: url(../../assets/img/member.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 45px;
+  height: 20px; }
+
+.hockey-search {
+  color: #fff;
+  background-image: url(../../assets/img/search.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px; }
+
+.download {
+  background-image: url(../../assets/img/download.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px; }
+
+.white-divider {
+  width: 100%;
+  height: 5px;
+  background: #fff;
+  z-index: 5; }
+  .white-divider a {
+    display: none; }
+  @media screen and (min-width: 1024px) {
+    .white-divider {
+      height: 35px;
+      color: #000000;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 0 10%; }
+      .white-divider a {
+        display: inline-block;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-decoration: none;
+        color: #000000;
+        font-size: .8rem;
+        font-style: italic;
+        padding-bottom: 3px;
+        border-bottom: 3px solid transparent; }
+        .white-divider a:hover {
+          border-bottom: 3px solid #000000; } }
+
+.white-divider-footer {
+  position: relative;
+  width: 100%;
+  height: 5px;
+  background: #fff;
+  z-index: 5;
+  margin-top: 10%;
+  margin-bottom: -60px; }
+  @media screen and (min-width: 768px) {
+    .white-divider-footer {
+      margin-top: 5%; } }
+
+.redwings-logo {
+  background-image: url(../../assets/img/redwings-logo.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 40%;
+  height: 55px;
+  position: absolute;
+  top: 1%;
+  left: 48%;
+  z-index: 50; }
+  @media screen and (min-width: 1024px) {
+    .redwings-logo {
+      width: 6%; } }
+
+.hero {
+  text-align: center; }
+  .hero .hero-background-image {
+    background-image: url(../../assets/img/hero-image.png);
+    width: 100%;
+    height: 430px;
+    background-size: cover;
+    background-position: 40% 30%;
+    background-color: #CB161E;
+    background-blend-mode: multiply;
+    margin-bottom: 15px; }
+    @media screen and (min-width: 1024px) {
+      .hero .hero-background-image {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 900px; } }
+  .hero .hero-headline {
+    font-size: 3rem;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    width: 80%; }
+    @media screen and (min-width: 1024px) {
+      .hero .hero-headline {
+        top: 40%;
+        font-size: 5rem; } }
+  .hero .ticket-img {
+    position: absolute;
+    width: 36%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+    .hero .ticket-img > svg .cls-1 {
+      stroke: white; }
+    @media screen and (min-width: 768px) {
+      .hero .ticket-img {
+        width: 25%; } }
+    @media screen and (min-width: 1024px) {
+      .hero .ticket-img {
+        top: 60%;
+        font-size: 2rem; } }
+  .hero .ticket-text {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+    @media screen and (min-width: 1024px) {
+      .hero .ticket-text {
+        top: 60%;
+        font-size: 2rem; } }
+    .hero .ticket-text h4 {
+      font-family: 'helvetica';
+      font-size: 1em;
+      text-transform: uppercase; }
+
+.subheading {
+  text-transform: uppercase;
+  color: #fff;
+  margin-left: 5%;
+  font-size: 2.5rem;
+  position: relative; }
+  @media screen and (min-width: 768px) {
+    .subheading {
+      font-size: 3.5rem; } }
+
+.subheading-news.index {
+  top: -40px; }
+
+.subheading-connect {
+  top: -25px; }
+  @media screen and (min-width: 768px) {
+    .subheading-connect {
+      margin-bottom: 50px; } }
+
+.subheading-blog {
+  top: -25px; }
+
+.subheading-gear {
+  top: -25px; }
+
+.ceremony-background-image,
+.blog-background-image,
+.gear-background-image {
+  background-image: url(../../assets/img/closing-ceremony.jpg);
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+@media screen and (min-width: 768px) {
+  .ceremony-background-image {
+    width: 70%; } }
+
+@media screen and (min-width: 768px) {
+  .gear-background-image,
+  .blog-background-image {
+    width: 40%; } }
+
+.blog-background-image {
+  background-image: url(../../assets/img/redwings-blog.jpg); }
+
+.gear-background-image {
+  background-image: url(../../assets/img/redwings-gear.jpg); }
+
+.ceremony-details,
+.connect-button,
+.blog-details,
+.gear-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5%;
+  line-height: 25px;
+  font-size: .8rem; }
+  @media screen and (min-width: 768px) {
+    .ceremony-details,
+    .connect-button,
+    .blog-details,
+    .gear-details {
+      padding: 2% 5%; } }
+
+.detail-text-headline {
+  text-transform: uppercase;
+  font-size: 1.2rem; }
+  @media screen and (min-width: 768px) {
+    .detail-text-headline {
+      font-size: 1.2rem;
+      font-weight: bold; } }
+
+.red-divider {
+  width: 100%;
+  height: 60px;
+  background: url(../../assets/img/red-surface.jpg); }
+  @media screen and (min-width: 768px) {
+    .red-divider {
+      height: 80px; } }
+
+.connect-image-container {
+  margin-top: -7.5%; }
+  .connect-image-container .connect-image {
+    background-image: url(../../assets/img/hero-image.png);
+    width: 90%;
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 7.5% 5%;
+    border-radius: 5px; }
+    @media screen and (min-width: 768px) {
+      .connect-image-container .connect-image {
+        margin: 1%;
+        height: 250px; } }
+  .connect-image-container .connect-image-2 {
+    background-image: url(../../assets/img/redwings-connect2.jpg); }
+  .connect-image-container .connect-image-3 {
+    background-image: url(../../assets/img/redwings-connect3.jpg); }
+
+@media screen and (min-width: 768px) {
+  .connect {
+    margin-top: 2%; } }
+
+.connect-button,
+.gear-button {
+  display: flex;
+  justify-content: flex-end;
+  font-weight: bold;
+  font-size: 1.2rem; }
+
+@media screen and (min-width: 768px) {
+  .connect-button {
+    justify-content: space-between; } }
+
+.gear-button {
+  margin: 0; }
+
+.connect-follow-button,
+.gear-shop-button {
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  padding: 10px 50px;
+  text-transform: uppercase;
+  text-align: center;
+  transition: all 0.2s linear; }
+  .connect-follow-button:hover,
+  .gear-shop-button:hover {
+    border: 1px solid #000000;
+    color: #000000;
+    background-color: #fff; }
+  @media screen and (min-width: 768px) {
+    .connect-follow-button,
+    .gear-shop-button {
+      font-size: 1.2rem;
+      padding: 15px 40px; } }
+
+.tentacles {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  top: 60px;
+  margin: 0 auto; }
+  .tentacles .tentacle-left {
+    background-image: url(../../assets/img/tentacle-left.png);
+    background-repeat: no-repeat;
+    width: 110px;
+    height: 100px;
+    z-index: 5;
+    margin-top: -56px; }
+  .tentacles .tentacle-middle {
+    background-image: url(../../assets/img/tentacle-middle.png);
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+    z-index: 6;
+    margin-top: -44px; }
+  .tentacles .tentacle-right {
+    background-image: url(../../assets/img/tentacle-right.png);
+    background-repeat: no-repeat;
+    width: 115px;
+    height: 100px;
+    z-index: 5;
+    margin-top: -56px;
+    margin-left: -60px; }
+
+footer {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../../assets/img/ice-background-22.jpg);
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  footer .nhl-logo {
+    background-image: url(../../assets/img/nhl-logo.png);
+    width: 15%;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; }
+  footer .sitemap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10%;
+    flex-wrap: wrap;
+    font-size: .8rem; }
+    footer .sitemap a,
+    footer .sitemap div {
+      margin: 0% 2.5%;
+      text-decoration: none;
+      color: #fff;
+      line-height: 30px;
+      text-align: center; }
+    @media screen and (min-width: 768px) {
+      footer .sitemap {
+        margin: 5%; } }
+  footer .social-media-icons {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    justify-content: space-around; }
+    footer .social-media-icons .sm-icon {
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 30px;
+      height: 30px; }
+    footer .social-media-icons .twitter-icon {
+      background-image: url(../../assets/img/twitter.png); }
+    footer .social-media-icons .instagram-icon {
+      background-image: url(../../assets/img/instagram.png); }
+    footer .social-media-icons .youtube-icon {
+      background-image: url(../../assets/img/youtube.png); }
+    footer .social-media-icons .facebook-icon {
+      background-image: url(../../assets/img/facebook.png); }
+
+.subsections {
+  display: flex;
+  flex-direction: column; }
+
+.roster-container,
+.sort-container {
+  padding: 0 5%;
+  margin: 50px 0;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  @media screen and (min-width: 768px) {
+    .roster-container,
+    .sort-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between; } }
+  .roster-container h1,
+  .sort-container h1 {
+    font-size: 4rem;
+    margin-bottom: 5%; }
+    @media screen and (min-width: 1024px) {
+      .roster-container h1,
+      .sort-container h1 {
+        width: 50%; } }
+  .roster-container .roster__filter,
+  .sort-container .roster__filter {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 5%; }
+    .roster-container .roster__filter h4,
+    .sort-container .roster__filter h4 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 30%;
+      background-color: #fff;
+      color: #DB4544;
+      font-size: 1rem;
+      padding: 10px; }
+    .roster-container .roster__filter .dropdown,
+    .roster-container .roster__filter .filter,
+    .sort-container .roster__filter .dropdown,
+    .sort-container .roster__filter .filter {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 70%; }
+      @media screen and (min-width: 768px) {
+        .roster-container .roster__filter .dropdown,
+        .roster-container .roster__filter .filter,
+        .sort-container .roster__filter .dropdown,
+        .sort-container .roster__filter .filter {
+          width: 60%; } }
+      .roster-container .roster__filter .dropdown select,
+      .roster-container .roster__filter .filter select,
+      .sort-container .roster__filter .dropdown select,
+      .sort-container .roster__filter .filter select {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #fff;
+        border-radius: 0;
+        -webkit-appearance: none;
+        background-color: #A2232D;
+        color: white;
+        font-size: 1rem;
+        text-align-last: center; }
+    .roster-container .roster__filter .filter,
+    .sort-container .roster__filter .filter {
+      border: 1px solid #fff;
+      border-radius: 0;
+      -webkit-appearance: none;
+      background-color: #A2232D;
+      color: white;
+      font-size: 1rem;
+      text-align-last: center; }
+
+.players-tablet {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; }
+  .players-tablet .player {
+    position: relative;
+    background: #000000;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 40%;
+    margin-bottom: 75px;
+    padding: 1% 1%; }
+    @media screen and (max-width: 768px) {
+      .players-tablet .player {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 85%;
+        margin: 10% 0;
+        padding: 2% 3%;
+        padding-right: 15%; } }
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .players-tablet .player {
+        width: 40%; } }
+    @media screen and (min-width: 1024px) {
+      .players-tablet .player {
+        width: 35%; } }
+  .players-tablet .player-number {
+    font-size: 2rem;
+    border-right: 1px solid #fff;
+    padding-right: 3%; }
+    @media screen and (min-width: 768px) {
+      .players-tablet .player-number {
+        font-size: 2.5rem; } }
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .players-tablet .player-number {
+        font-size: 2rem; } }
+  .players-tablet .player-stats {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-right: 20px;
+    margin-left: 10px; }
+    @media screen and (max-width: 768px) {
+      .players-tablet .player-stats {
+        font-size: 1rem; } }
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .players-tablet .player-stats {
+        width: 60%;
+        font-size: 1.1rem; } }
+    @media screen and (min-width: 1024px) {
+      .players-tablet .player-stats {
+        width: 60%;
+        font-size: 1.3rem; } }
+    .players-tablet .player-stats .player-name {
+      border-bottom: 1px solid #fff;
+      padding-bottom: 4%;
+      text-align: center; }
+    .players-tablet .player-stats .player-data {
+      padding-top: 4%;
+      display: flex;
+      justify-content: space-around; }
+      @media screen and (min-width: 768px) {
+        .players-tablet .player-stats .player-data {
+          justify-content: space-between; } }
+  .players-tablet .player-image-parent {
+    position: absolute;
+    right: -20px;
+    width: 25%; }
+    @media screen and (min-width: 768px) {
+      .players-tablet .player-image-parent {
+        top: -20px;
+        right: -50px; } }
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .players-tablet .player-image-parent {
+        width: 30%;
+        top: -13px;
+        right: -38px; } }
+    @media screen and (min-width: 1024px) {
+      .players-tablet .player-image-parent {
+        width: 30%; } }
+    .players-tablet .player-image-parent .player-image {
+      border-radius: 50%;
+      border: 6px solid #000000;
+      width: 100%;
+      z-index: 3; }
+
+.players-desktop {
+  display: none; }
+  @media screen and (min-width: 1024px) {
+    .players-desktop {
+      display: block; } }
+  .players-desktop table {
+    width: 90%;
+    margin: 0 auto; }
+    .players-desktop table thead {
+      background-color: black; }
+      .players-desktop table thead th:first-child {
+        display: flex;
+        justify-content: center; }
+      .players-desktop table thead th {
+        padding: 10px 0;
+        border-bottom: 1px solid white; }
+    .players-desktop table .table-body .table-player-name {
+      display: flex;
+      justify-content: center; }
+    .players-desktop table .table-body tr .init-td {
+      padding: 10px 0;
+      text-align: center; }
+    .players-desktop table .table-body tr:first-child {
+      background-color: rgba(167, 167, 167, 0.5) !important; }
+    .players-desktop table .table-body tr:nth-child(even) {
+      background-color: rgba(0, 0, 0, 0.8) !important; }
+    .players-desktop table .table-body tr:nth-child(3n) {
+      background-color: rgba(0, 0, 0, 0.8); }
+    .players-desktop table .table-body .expanded-player {
+      height: 100px;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: none; }
+      .players-desktop table .table-body .expanded-player .expanded-player-image {
+        background-image: url(../img/redwings-player-image.jpg);
+        background-repeat: no-repeat;
+        background-position: center; }
+      .players-desktop table .table-body .expanded-player .expanded-player-number {
+        text-align: right;
+        padding-top: 50px;
+        font-size: 1.3em; }
+      .players-desktop table .table-body .expanded-player .expanded-player-position, .players-desktop table .table-body .expanded-player .expanded-player-height {
+        text-align: center; }
+      .players-desktop table .table-body .expanded-player.active {
+        display: table-row; }
+
+/*# sourceMappingURL=main.css.map */

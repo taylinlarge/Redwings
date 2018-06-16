@@ -1,0 +1,958 @@
+/* 
+==============================================
+CONTENT:	Project Name Here
+AUTHOR:		Your Name Here
+==============================================
+
+TABLE OF CONTENTS:
+
+1. Main Layout
+2. Content
+
+==============================================
+*/
+
+@import "variables";
+@import "news";
+@import "tablet";
+@import "desktop";
+@import "fonts";
+@import "hamburger";
+@import 'slick';
+
+/* 1. Main Layout ================================= */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: $black;
+	color: $white;
+	display: box;
+	font-family: 'TrebuchetMS';
+
+	&.news {
+		background: url(../../assets/img/red-surface.jpg);
+
+		& .subheading-news {
+		    top: 13px;
+		    z-index: 5;
+		    margin-top: 5%;
+
+		    @media screen and (min-width: $med-break) {
+		    	margin-top: 2%;
+		    }
+		}
+	}
+
+	&.roster {
+		background-image: url(../../assets/img/hero-image.png);
+		width: 100%;
+		//height: 430px;
+		background-size: cover;
+		background-position: 40% 30%;
+		//background-color: rgba(80, 9, 12, .7);
+		background-color: $red;
+		background-blend-mode: multiply;
+	}
+}
+
+#tablet {
+	display: none;
+
+	@media screen and (min-width: $med-break) {
+		display: inline-block;
+	}
+
+	@media screen and (min-width: $lg-break) {
+		&.nav-menu {
+			display: none;
+		}
+	}	
+}
+
+#desktop {
+	display: none;
+
+	@media screen and (min-width: $lg-break) {
+		display: inline-block;
+	}
+}
+
+.wrapper {
+	// max-width: 1200px;
+	margin: 0 auto;
+}
+
+
+.desktop-nav {
+	width: 100%;
+	height: 36px;
+	background: $black;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0% 5%;
+
+	@media screen and (min-width: $med-break) {
+		padding: 0% 2%;
+	}
+}
+
+.hockey-hamburger {
+	background-image: url(../../assets/img/burg.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 45px;
+	height: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+
+	@media screen and (min-width: $med-break) {
+		width: 80px;
+	}
+
+	@media screen and (min-width: $lg-break) {
+		display: none;
+	}
+
+
+}
+.burger-bars {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	left: -10px;
+
+	@media screen and (min-width: $lg-break) {
+		display: none;
+	}
+
+	.top-burg, .mid-burg, .bot-burg {
+		position: relative;
+		width: 30px;
+		height: 2px;
+		background-color: white;
+		border-radius: 2px;
+	}
+
+	.mid-burg {
+		margin: 3px 0px;
+		width: 25px;
+	}
+
+	.bot-burg {
+		width: 20px;
+	}
+}
+
+.hockey-logo {
+	background-image: url(../../assets/img/nhl-logo2.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 45px;
+	height: 20px;
+}
+
+.bag {
+	background-image: url(../../assets/img/bag.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 45px;
+	height: 20px;
+}
+
+.user {
+	background-image: url(../../assets/img/member.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 45px;
+	height: 20px;
+}
+
+.hockey-search {
+	color: #fff;
+	background-image: url(../../assets/img/search.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 20px;
+	height: 20px;
+}
+
+.download {
+	background-image: url(../../assets/img/download.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 20px;
+	height: 20px;
+}
+
+.white-divider {
+	width: 100%;
+	height: 5px;
+	background: $white;
+	z-index: 5;
+
+	& a {
+		display: none;
+	}
+
+	@media screen and (min-width: $lg-break) {
+
+		& a {
+			display: inline-block;
+			text-transform: uppercase;
+			font-weight: bold;
+			text-decoration: none;
+			color: $black;
+			font-size: .8rem;
+			font-style: italic;
+			padding-bottom: 3px;
+			border-bottom: 3px solid transparent;
+			
+
+			&:hover {
+				border-bottom: 3px solid $black;
+				
+			}
+		}
+
+		height: 35px;
+		color: $black;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	    padding: 0 10%;
+	}
+}
+
+.white-divider-footer {
+	position: relative;
+	width: 100%;
+	height: 5px;
+	background: $white;
+	z-index: 5;
+	margin-top: 10%;
+    margin-bottom: -60px;
+
+    @media screen and (min-width: $med-break) {
+    	margin-top: 5%;
+    }
+}
+
+.redwings-logo {
+	background-image: url(../../assets/img/redwings-logo.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 40%;
+	height: 55px;
+	position: absolute;
+	top: 1%;
+	left: 48%;
+	z-index: 50;
+
+	@media screen and (min-width: $lg-break) {
+		width: 6%;
+	}
+}
+
+.hero {
+	text-align: center;	
+	
+	.hero-background-image {
+		background-image: url(../../assets/img/hero-image.png);
+		width: 100%;
+		height: 430px;
+		background-size: cover;
+		background-position: 40% 30%;
+		//opacity: .7;
+		background-color: $red;
+		background-blend-mode: multiply;
+		margin-bottom: 15px;
+
+		@media screen and (min-width: $lg-break) {
+			//position: absolute;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			width: 100%;
+			height: 900px;
+		}
+	}
+
+	.hero-headline {
+		font-size: 3rem;
+		position: absolute;
+		top: 30%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-transform: uppercase;
+		width: 80%;
+
+		@media screen and (min-width: $lg-break) {
+			top: 40%;
+			font-size: 5rem;
+		}
+	}
+
+	.ticket-img {
+		position: absolute;
+		width: 36%;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		& > svg {
+
+			.cls-1 {
+				stroke: white;
+			}
+		}
+
+		@media screen and (min-width: $med-break) {
+			width: 25%;
+		}
+
+		@media screen and (min-width: $lg-break) {
+			top: 60%;
+			font-size: 2rem;
+		}
+	}
+
+	.ticket-text {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		@media screen and (min-width: $lg-break) {
+			top: 60%;
+			font-size: 2rem;
+		}
+
+		h4 {
+			font-family: 'helvetica';
+			font-size: 1em;
+			// margin-left: 20px;
+			text-transform: uppercase;
+		}
+	}
+}
+
+
+.subheading {
+	text-transform: uppercase;
+	color: $white;
+	margin-left: 5%;
+	font-size: 2.5rem;
+	position: relative;
+
+	@media screen and (min-width: $med-break) {
+		font-size: 3.5rem;
+	}
+}
+
+.subheading-news {
+
+	&.index {
+		top: -40px;	
+	}
+}
+
+.subheading-connect {
+    top: -25px;
+
+    @media screen and (min-width: $med-break) {
+    	margin-bottom: 50px;
+    }
+}
+
+.subheading-blog {
+    top: -25px;
+}
+
+.subheading-gear {
+    top: -25px;
+}
+
+.ceremony-background-image,
+.blog-background-image,
+.gear-background-image {
+	background-image: url(../../assets/img/closing-ceremony.jpg);
+	width: 100%;
+	height: 300px;		//135px in pdf
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.ceremony-background-image {
+	@media screen and (min-width: $med-break) {
+		width: 70%;
+	}
+}
+
+.gear-background-image,
+.blog-background-image {
+	@media screen and (min-width: $med-break) {
+		width: 40%;
+	}
+}
+
+.blog-background-image {
+	background-image: url(../../assets/img/redwings-blog.jpg);
+}
+
+.gear-background-image {
+	background-image: url(../../assets/img/redwings-gear.jpg);
+}
+
+.ceremony-details,
+.connect-button,
+.blog-details,
+.gear-details {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5%;
+	line-height: 25px;
+	font-size: .8rem;
+
+	@media screen and (min-width: $med-break) {
+		padding: 2% 5%;
+	}
+}
+
+.detail-text-headline {
+	text-transform: uppercase;
+	font-size: 1.2rem;
+
+	@media screen and (min-width: $med-break) {
+		font-size: 1.2rem;
+		font-weight: bold;
+	}
+}
+
+.red-divider {
+	width: 100%;
+	height: 60px;
+	background: url(../../assets/img/red-surface.jpg);
+
+	@media screen and (min-width: $med-break) {
+		height: 80px;
+	}
+}
+
+.connect-image-container {
+	margin-top: -7.5%;
+
+	.connect-image {
+		background-image: url(../../assets/img/hero-image.png);
+		width: 90%;
+		height: 200px;		
+		background-size: cover;
+		background-repeat: no-repeat;
+		margin: 7.5% 5%;
+		border-radius: 5px;
+
+		@media screen and (min-width: $med-break) {
+			margin: 1%;
+			height: 250px;
+		}
+	}
+
+	.connect-image-2 {
+			background-image: url(../../assets/img/redwings-connect2.jpg);
+	}
+
+	.connect-image-3 {
+			background-image: url(../../assets/img/redwings-connect3.jpg);
+	}
+}
+
+.connect {
+
+	@media screen and (min-width: $med-break) {
+		margin-top: 2%;
+	}
+}
+
+
+.connect-button,
+.gear-button {
+	display: flex;
+	justify-content: flex-end;
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+.connect-button {
+	@media screen and (min-width: $med-break) {
+		justify-content: space-between;
+	}
+}
+
+.gear-button{
+	margin: 0;
+}
+
+.connect-follow-button,
+.gear-shop-button {
+	border: 1px solid $white;
+	background: transparent;
+	color: $white;
+	padding: 10px 50px;
+
+	text-transform: uppercase;
+	text-align: center;
+	transition: all 0.2s linear;
+
+	&:hover {
+		border: 1px solid $black;
+		color: $black;
+		background-color: $white;
+	}
+
+	@media screen and (min-width: $med-break) {
+		font-size: 1.2rem;
+		padding: 15px 40px;
+	}
+}
+.tentacles {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+    top: 60px;
+    margin: 0 auto;
+
+	.tentacle-left {
+		background-image: url(../../assets/img/tentacle-left.png);
+		background-repeat: no-repeat;
+		//background-size: contain;
+		width: 110px;
+		height: 100px;
+		// position: absolute;
+		z-index: 5;
+	    margin-top: -56px;
+	}
+
+	.tentacle-middle {
+		background-image: url(../../assets/img/tentacle-middle.png);
+		background-repeat: no-repeat;
+		//background-size: contain;
+		width: 100px;
+		height: 100px;
+		// position: absolute;
+		z-index: 6;
+	    margin-top: -44px;
+	    // left: 55%;
+	}
+
+	.tentacle-right {
+		background-image: url(../../assets/img/tentacle-right.png);
+		background-repeat: no-repeat;
+		//background-size: contain;
+		width: 115px;
+		height: 100px;
+		// position: absolute;
+		z-index: 5;
+	    margin-top: -56px;
+	    margin-left: -60px;
+	    // left: 61%;
+	}
+}
+
+
+footer {
+	background-image: linear-gradient(to right, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(../../assets/img/ice-background-22.jpg);
+	width: 100%;
+	height: 400px;		
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	.nhl-logo {
+		background-image: url(../../assets/img/nhl-logo.png);
+		width: 15%;
+		height: 100px;		
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	.sitemap {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 10%;
+		flex-wrap: wrap;
+		font-size: .8rem;
+
+		& a,
+		& div {
+			margin: 0% 2.5%;
+			text-decoration: none;
+			color: $white;
+			line-height: 30px;
+			text-align: center;
+			//font-weight: 100;
+		}
+
+		@media screen and (min-width: $med-break) {
+			margin: 5%;
+		}
+	}
+
+	.social-media-icons {
+		display: flex;
+		justify-content: space-between;
+		width: 50%;
+		justify-content: space-around;
+
+		.sm-icon {
+			background-repeat: no-repeat;
+			background-size: contain;
+			width: 30px;
+			height: 30px;
+		}
+
+		.twitter-icon {
+			background-image: url(../../assets/img/twitter.png);
+		}
+
+		.instagram-icon {
+			background-image: url(../../assets/img/instagram.png);
+		}
+
+		.youtube-icon {
+			background-image: url(../../assets/img/youtube.png);
+		}
+
+		.facebook-icon {
+			background-image: url(../../assets/img/facebook.png);
+		}
+	}
+}
+
+
+.subsections {
+	display: flex;
+	flex-direction: column;
+
+	@media screen and (min-width: $lg-break) {
+				// margin-top: 50%;
+	}
+}
+
+.roster-container,
+.sort-container {
+	padding: 0 5%;
+    margin: 50px 0;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media screen and (min-width: $med-break) {
+    	display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+    }
+
+    h1 {
+    	font-size: 4rem;
+    	margin-bottom: 5%;
+
+	    @media screen and (min-width: $lg-break) {
+	    	width: 50%;
+	    }
+    }
+
+    .roster__filter {
+    	display: flex;
+    	justify-content: center;
+    	width: 100%;
+	    margin-bottom: 5%;
+
+    	h4 {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 30%;
+			background-color: $white;
+			color: $light-red;
+			font-size: 1rem;
+			padding: 10px;
+    	}
+
+    	.dropdown,
+    	.filter {
+    		display: flex;
+			justify-content: center;
+			align-items: center;
+    		width: 70%;
+
+		    @media screen and (min-width: $med-break) {
+		    	width: 60%;
+		    }
+
+    		select {
+    			width: 100%;
+    			height: 100%;
+    			border: 1px solid $white;
+    			border-radius: 0;
+    			-webkit-appearance: none;
+    			background-color: $dark-red;
+    			color: white;
+    			font-size: 1rem;
+    			text-align-last:center;
+    		}
+    	}
+
+    	.filter {
+
+    		border: 1px solid $white;
+    		border-radius: 0;
+    		-webkit-appearance: none;
+    		background-color: $dark-red;
+    		color: white;
+    		font-size: 1rem;
+    		text-align-last:center;
+    	}
+    }
+}
+
+.players-tablet {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	
+	
+	// @media screen and (min-width: $lg-break) {
+	// 	display: none;
+	// }
+	
+
+
+	.player {
+		position: relative;
+		background: $black;
+	    display: flex;
+	    justify-content: flex-start;
+	    // height: 120px;
+	    align-items: center;
+	    width: 40%;
+	    margin-bottom: 75px;
+	    padding: 1% 1%;
+
+
+		@media screen and (max-width: $med-break) {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 85%;
+			margin: 10% 0;
+			padding: 2% 3%;
+			padding-right: 15%;	
+		}
+
+		@media (min-width: $med-break) and (max-width: $lg-break) {
+			width: 40%;
+		}
+
+		@media screen and (min-width: $lg-break) {
+			width: 35%;
+		}
+	}
+
+	.player-number {
+		font-size: 2rem;
+		border-right: 1px solid $white;
+		padding-right: 3%;
+
+		@media screen and (min-width: $med-break) {
+			font-size: 2.5rem;
+		}
+		@media (min-width: $med-break) and (max-width: $lg-break) {
+			font-size: 2rem;
+		}
+	}
+
+	.player-stats {
+		font-size: 1.5rem;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		margin-right: 20px;
+		margin-left: 10px;
+
+
+		@media screen and (max-width: $med-break) {
+			font-size: 1rem;
+		}
+
+		@media (min-width: $med-break) and (max-width: $lg-break) {
+			width: 60%;
+			font-size: 1.1rem;
+		}
+
+		@media screen and (min-width: $lg-break) {
+			width: 60%;
+			font-size: 1.3rem;
+		}
+
+		.player-name {
+			border-bottom: 1px solid $white;
+			padding-bottom: 4%;
+			text-align: center;
+
+		}
+
+		.player-data {
+			padding-top: 4%;
+			display: flex;
+			justify-content: space-around;
+
+			@media screen and (min-width: $med-break) {
+				justify-content: space-between;
+			}
+		}
+	}
+
+	.player-image-parent {
+		position: absolute;
+		right: -20px;
+		width: 25%;
+
+		@media screen and (min-width: $med-break) {
+			top: -20px;
+			right: -50px;
+		}
+
+		@media (min-width: $med-break) and (max-width: $lg-break) {
+			width: 30%;
+			top: -13px;
+			right: -38px;
+		}
+
+		@media screen and (min-width: $lg-break) {
+			width: 30%;
+		}
+
+		.player-image {
+			border-radius: 50%;
+			border: 6px solid $black;
+			width: 100%;
+			z-index: 3;
+		}
+	}
+
+}
+
+
+.players-desktop {
+	display: none;
+	@media screen and (min-width: $lg-break) {
+		display: block;
+	}
+
+	table {
+		width: 90%;
+		margin: 0 auto;
+
+		thead {
+			background-color: black;
+
+			th:first-child {
+				display: flex;
+				justify-content: center;
+			}
+
+			th {
+				padding: 10px 0;
+				border-bottom: 1px solid white;
+			}
+
+		}
+
+		.table-body {
+			
+			.table-player-name {
+				display: flex;
+				justify-content: center;
+			}
+
+			tr {
+				.init-td {
+					padding: 10px 0;
+					text-align: center;
+				}
+			}
+
+			tr:first-child {
+				background-color:rgba(167,167,167,0.5) !important;
+			}
+
+			tr:nth-child(even) {
+				background-color:rgba(0,0,0,0.8) !important;
+			}
+
+			// tr:nth-child(3n+1) {
+			// 	background-color:rgba(167,167,167,0.5);
+			// }
+
+			tr:nth-child(3n) {
+				background-color:rgba(0,0,0,0.8);
+			}
+
+			.expanded-player {
+				height: 100px;
+				background-color: rgba(0,0,0,0.7);
+				display: none;
+
+				.expanded-player-image {
+					background-image: url(../img/redwings-player-image.jpg);
+					background-repeat: no-repeat;
+					background-position: center;
+					// border-radius: 50%;
+					// width: 100px;
+					// height: 100px;
+				}
+
+				.expanded-player-number {
+					text-align: right;
+					padding-top: 50px;
+					font-size: 1.3em;
+				}
+
+				.expanded-player-position, .expanded-player-height {
+					text-align: center;
+				}
+
+				&.active {
+					display: table-row;
+				}
+			}
+		}
+	}
+
+}
+
+
+
+
+

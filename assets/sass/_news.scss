@@ -1,0 +1,250 @@
+.hero-news {
+	position: relative;
+}
+
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.video-info {
+	position: absolute;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	padding: 5%;
+	background: rgba(0,0,0,.6);
+	width: 100%;
+
+	& h2 {
+		border-bottom: 1px solid $white;
+		padding-bottom: 2%;
+	}
+
+	p {
+		padding-top: 2%;
+	}
+
+	.video-info-text {
+		margin-right: 5%;
+		max-width: 500px;
+
+	}
+
+	.video-info-time {
+		margin-top: 15px;
+
+		.video-date {
+			margin-left: 15px;
+		}
+	}
+}
+
+.sort {
+	margin: 5%;
+
+	@media screen and (min-width: $med-break) {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.sort-by,
+	.filter {
+		display: flex;
+		//justify-content: space-between;
+		border: 1px solid $white;
+		margin-bottom: 5%;
+
+		@media screen and (min-width: $med-break) {
+			width: 45%;
+		}
+
+		& h2 {
+			background: $white;
+			color: $red;
+			padding: 2% 10%;
+			text-transform: uppercase;
+			text-align: center;
+			flex-grow: 1;
+
+		}
+
+		& div {
+			width: 100%;
+			background: $light-red;
+			padding-right: 5%;
+			flex-grow: 2;
+		}
+	}
+}
+
+.news-article-parent {
+	margin: 5%;
+}
+
+.news-article {
+	margin-bottom: 3%;
+	position: relative;
+	left: -500px;
+	opacity: 0;
+	transition: .5s all;
+
+	&.active{
+		left: 0;
+		opacity: 1;
+	}
+}
+
+.news-alert {
+	display: flex;
+	height: 200px;
+	position: relative;
+	overflow: hidden;
+
+	.news-alert-video {
+		background-image: url(../../assets/img/redwings-blog.jpg);
+		width: 40%;
+		height: 200px;
+		background-size: cover;	
+		background-repeat: no-repeat;
+		background-position: center;
+
+		@media screen and (min-width: $med-break) {
+			width: 25%;
+		}
+	}
+
+	.news-blog-1 {
+		background-image: url(../../assets/img/redwings-blog3.jpg);
+	}
+
+	.news-blog-2 {
+		background-image: url(../../assets/img/redwings-blog4.jpg);
+	}
+
+	.news-blog-3 {
+		background-image: url(../../assets/img/redwings-blog5.jpg);
+	}
+
+	.news-alert-text {
+		position: relative;
+		padding: 2.5%;
+		width: 60%;
+		background: $white;
+		color: $black;
+
+		display: flex;
+		flex-direction: column;
+
+		@media screen and (min-width: $med-break) {
+			width: 75%;
+			flex-direction: row-reverse;
+		}
+
+		& p {
+			font-size: 1rem;
+
+			@media screen and (min-width: $med-break) {
+				padding-top: 4%;
+			}
+		}
+
+		& .news-alert-text-date {
+			border-bottom: 1px solid $black;
+			padding-bottom: 25px;
+		    width: 50%;
+
+
+			@media screen and (min-width: $med-break) {
+				border-bottom: none;
+				padding: 0;
+			}
+		}
+
+		& .news-alert-text-time {
+			padding: 0;
+			width: 50%;
+		}
+
+		& h2 {
+			padding: 2% 0%;
+			line-height: 24px;
+			font-weight: bold;
+
+			@media screen and (min-width: $med-break) {
+				border-bottom: 1px solid $black;
+				padding-bottom: 4%;
+			}
+		}
+
+	}
+}
+
+.news-alert-details {
+	display: flex;
+	justify-content: space-between;
+
+	@media screen and (min-width: $med-break) {
+		width: 30%;
+		padding-top: 45px;
+	}
+}
+
+.news-alert-paragraph {
+	margin-top: 25px;
+
+	@media screen and (min-width: $med-break) {
+		width: 70%;
+		margin-right: 5%;
+		margin-top: 0;
+	}
+}
+
+.more-button {
+	position: absolute; 
+	bottom: 0; 
+	right: 5%;
+	//left: 0;
+	width: 95%; 
+	text-align: right; 
+	margin: 0;
+	padding: 30px 0; 
+	background-image: linear-gradient(to bottom, transparent, $white);
+	//font-size: 1.3rem;
+	color: $red;
+	text-transform: uppercase;
+	font-weight: bold;
+
+	@media screen and (min-width: $med-break) {
+		background-image: none;
+	}
+}
+
+.time-zone {
+	font-style: italic;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
